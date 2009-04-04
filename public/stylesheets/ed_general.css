@@ -1,0 +1,153 @@
+/*
+
+  NOMBRE PROYECTO
+	Autor
+	Fecha
+
+*/
+
+
+
+/*    NORMALIZACIÓN     ***********************************************************
+------------------------***********************************************************/
+
+body {
+  font-family: Arial, Verdana, sans-serif;
+  color: #333;
+	font-size: x-small;
+	font-variant:normal;
+	font-style:normal;
+	font-weight:normal;
+	padding: 0;
+	margin: 0;
+	background: #fff url("../images/ed/bg_body.png") left 8.7em repeat-x;
+}
+
+img {
+  border: 0;
+}
+
+
+
+
+
+/*    LAYOUT      *****************************************************************
+------------------*****************************************************************/
+		
+#header {
+  height: 8.7em;
+}
+
+#container {
+  width: 95.1em;
+  margin: 0 auto;
+}
+
+
+/**    ÁREAS     ******************************************************************
+-----------------******************************************************************/
+
+
+
+/**--  HEADER    ------------------------------------------------------------------
+----------------------------------------------------------------------------------*/ 
+
+#header h1 {
+  font-size: 1em;
+  margin: 2em 1em;
+  float: left;
+  display: inline;
+}
+
+#header h1 a,
+#header h1 a span {
+  display: block;
+  width: 18.5em;
+  height: 4.5em;  
+  position: relative;
+}
+
+#header h1 a span {
+  background: url("../images/ed/logo.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#header p {
+  margin: 0;
+  font-size: 1.2em;
+  text-align: right;
+  padding: 3.33em 0 0 0;
+}
+
+#header p a {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+
+/**--  FOOTER   -------------------------------------------------------------------
+----------------------------------------------------------------------------------*/
+
+
+
+/**    PÁGINAS      ***************************************************************
+--------------------***************************************************************/
+
+
+/**--  AMMOUNT INTRO     ---------------------------------------------------------------
+----------------------------------------------------------------------------------*/ 
+
+form#ammount_intro {
+  margin: 4em 0;
+}
+
+form#ammount_intro p#money_spent {
+  background: url("../images/ed/bg_ammount_input.png") right top no-repeat;
+  text-align: right;
+  margin: 0 6em 0 0;
+}
+
+form#ammount_intro p#money_spent label {
+  font-size: 3.5em;
+  vertical-align: middle;
+  padding-right: 0.5em;
+  font-weight: bold;
+}
+
+form#ammount_intro p#money_spent input {
+  vertical-align: middle;
+}
+
+form#ammount_intro p#money_spent input#raw_hole{
+  font-size: 3.5em;
+  width: 11.7em;
+  border: none;
+  background: #fff;
+}
+
+form#ammount_intro p#money_spent span {
+  display: block;
+  text-align: left;
+  color: #6A694B;
+  font-weight: bold;
+  font-size: 1.4em;
+  margin: 0.5em 0;
+  padding: 0 0 0 21.42em;
+}
+
+form#ammount_intro p#total_spent {
+  text-align: right;
+  margin: 3em 3em 0 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+form#ammount_intro p#total_spent span {
+  font-size: 1.75em;
+  border: 1px solid #E8D596;
+  background: #F4F6E6;
+  padding: 0.2em;
+}
