@@ -1,0 +1,6 @@
+<h1><%= "#{@user.login} holes:" %></h1>
+<% for hole in @user.holes do -%>
+  <ul>
+    <li><%=h "#{hole.concept}: #{hole.quantity}" %></li>
+  </ul>
+<% end -%>
