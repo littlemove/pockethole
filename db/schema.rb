@@ -9,17 +9,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090404142706) do
+ActiveRecord::Schema.define(:version => 20090405104451) do
 
   create_table "holes", :force => true do |t|
     t.string   "concept"
     t.float    "quantity"
-    t.integer  "user_id"
+    t.integer  "month_outcome_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "holes", ["quantity"], :name => "index_holes_on_quantity"
+
+  create_table "month_outcomes", :force => true do |t|
+    t.integer  "month"
+    t.integer  "year"
+    t.float    "outcome",    :default => 0.0
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",             :null => false

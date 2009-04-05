@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => [:show, :update]
-  
+
   def new
     @user = User.new
   end
@@ -22,13 +22,13 @@ class UsersController < ApplicationController
 
   def update
     @user = @current_user
-    
-    @user.holes << Hole.from_raw(params[:raw_hole])    
+
+    month_outcome = @user.month_outcomes.find_or_create_by_month_and_year( Date.today.month, Date.today.year)
+    month_outcome.holes << Hole.from_raw(params[:raw_hole])
+
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Al bujero!"
-      redirect_to :action => 'show'
     else
-      render :action => :edit
     end
+    redirect_to :action => 'show'
   end
 end

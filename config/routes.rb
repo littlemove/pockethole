@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :home, :controller => "users", :action => :show
   
   map.resources :users do |user|
-    user.resources :holes
+    user.resources :month_outcomes
   end
 
   map.root :controller => "user_sessions", :action => "new"

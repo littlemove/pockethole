@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
   acts_as_authentic
 
-  has_many :holes
+  has_many :month_outcomes
 end
