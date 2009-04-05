@@ -29,6 +29,6 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
     else
     end
-    redirect_to :action => 'show'
+    redirect_to home_url
   end
 end
