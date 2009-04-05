@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :user_session
 
-  map.resource :account, :controller => "users"
+  map.resource :home, :controller => "users", :action => :show
   
   map.resources :users do |user|
     user.resources :holes
