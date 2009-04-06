@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Hole < ActiveRecord::Base
   belongs_to :month_outcome
   validates_presence_of :concept, :quantity
@@ -5,7 +6,7 @@ class Hole < ActiveRecord::Base
   after_save :update_month_outcome
 
   def self.from_raw(raw)
-    sanitized_raw = raw.gsub('$','').gsub(',','.')
+    sanitized_raw = raw.gsub(Regexp.new('$|€'),'').gsub(',','.')
     quantity = sanitized_raw.match('(\d)+(\.(\d)+)?')[0]
     concept = sanitized_raw.gsub(quantity, '').strip
     Hole.new(:quantity => quantity, :concept => concept)
