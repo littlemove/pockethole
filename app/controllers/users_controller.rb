@@ -22,12 +22,13 @@ class UsersController < ApplicationController
 
   def update
     @user = @current_user
+    unless params[:raw_hole].blank?
+      month_outcome = @user.month_outcomes.find_or_create_by_month_and_year(Date.today.month, Date.today.year)
+      month_outcome.holes << Hole.from_raw(params[:raw_hole])
 
-    month_outcome = @user.month_outcomes.find_or_create_by_month_and_year( Date.today.month, Date.today.year)
-    month_outcome.holes << Hole.from_raw(params[:raw_hole])
-
-    if @user.update_attributes(params[:user])
-    else
+      if @user.update_attributes(params[:user])
+      else
+      end
     end
     redirect_to home_url
   end
