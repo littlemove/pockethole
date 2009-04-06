@@ -1,20 +1,22 @@
 <%= content_for :title, 'Home' %>
 
 <% form_for @user, :html => { :id => "ammount_intro" } do |f| %>
-  
-  <p id="money_spent">
-    <label for="ammount">
-      I've just spent
-    </label>
-    <%= text_field_tag 'raw_hole' %>
-    <input type="image" name="submit" src="images/ed/submit_button.png" id="ammount_submit" />
-    <span>20€ shopping, beer 10.75 €...</span>
-  </p>
-  
+
+<p id="money_spent">
+  <label for="ammount">
+    I've just spent
+  </label>
+  <%= text_field_tag 'raw_hole' %>
+  <input type="image" name="submit" src="images/ed/submit_button.png" id="ammount_submit" />
+  <span>20€ shopping, beer 10.75 €...</span>
+</p>
+
+<% unless @user.month_outcomes.empty? -%>
   <p id="total_spent">
     ...that makes a total of
     <span><%= @user.month_outcomes.last.outcome %>€</span>
     this month
-  </p>  
+  </p>
+<% end  -%>
 
 <% end -%>
