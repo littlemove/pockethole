@@ -5,8 +5,9 @@ class Hole < ActiveRecord::Base
   after_save :update_month_outcome
 
   def self.from_raw(raw)
-    quantity = raw.gsub('$','').gsub(',','.').match('(\d)+(\.(\d)+)?')[0]
-    concept = raw.gsub('$','').gsub(quantity, '').strip
+    sanitized_raw = raw.gsub('$','').gsub(',','.')
+    quantity = sanitized_raw.match('(\d)+(\.(\d)+)?')[0]
+    concept = sanitized_raw.gsub(quantity, '').strip
     Hole.new(:quantity => quantity, :concept => concept)
   end
 
